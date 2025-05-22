@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhruv's Creative Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .hex {
+      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+    
+    /* Fixed Space Background */
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      min-height: 100vh;
+    }
+    
+    #space-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+      overflow: hidden;
+    }
+    
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle 5s infinite ease-in-out;
+      will-change: transform, opacity;
+    }
+    
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+    
+    /* Content container */
+    .content-container {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: background-color 0.5s ease;
+    }
+    
+    /* Light mode adjustments */
+    :root:not(.dark) .content-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+    }
+    
+    :root:not(.dark) .star {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+  <!-- Space Background (fixed position) -->
+  <div id="space-background"></div>
+  
+  <!-- Content Container -->
+  <div class="content-container">
+    <!-- Toggle Button -->
+    <button id="toggleTheme" class="fixed top-5 right-5 p-3 rounded-full bg-white text-black shadow-lg z-50 transition-colors duration-300">
+      <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden fade-in">
+      <div class="hex w-52 h-52 bg-white overflow-hidden shadow-lg mb-6">
+        <img src="prt.jpg" alt="Dhruv Photo" class="w-full h-full object-cover fade-in" loading="lazy" />
+      </div>
+
+      <!-- Contact Icons -->
+      <div class="flex justify-center space-x-6 mb-4 text-xl fade-in">
+        <a href="https://www.linkedin.com/in/mrdhruvsolanki/" target="_blank" class="hover:text-pink-400 transition-colors duration-300"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/allendhruv" target="_blank" class="hover:text-pink-400 transition-colors duration-300"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/918700419453" target="_blank" class="hover:text-pink-400 transition-colors duration-300"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+      <h1 class="text-4xl font-bold fade-in">Hello, I am <span class="text-pink-500 transition-colors duration-300">Dhruv</span></h1>
+      <p class="text-md mt-2 fade-in">A freelance web & AI/ML developer</p>
+
+      <!-- Contact Info Inline -->
+      <div class="mt-4 text-sm fade-in">
+        <p>Email: <a href="mailto:dhruvsolankigi@gmail.com" class="text-pink-400 hover:text-pink-300 transition-colors duration-300">dhruvsolankigi@gmail.com</a> &nbsp; | &nbsp;
+           Phone: <a href="tel:+918700419453" class="text-pink-400 hover:text-pink-300 transition-colors duration-300">+91 8700419453</a></p>
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-blue-500 pb-2">About Me</h2>
+      <p>I am a dedicated and passionate B.Tech student in Computer Science and Engineering with specialization in Artificial Intelligence and Machine Learning. I aim to leverage my technical and analytical skills to build impactful solutions in the field of technology, and I am always eager to take on new challenges that push my learning boundaries.</p>
+    </section>
+
+    <!-- Skills -->
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-green-500 pb-2">Skills</h2>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center">
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-python-plain colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">Python</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="fab fa-microsoft text-green-600 text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">MS Excel</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI" class="w-8 h-8 mx-auto group-hover:scale-110 transition-transform">
+          <p class="text-sm mt-2">Power BI</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-c-plain colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">C</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-html5-plain colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">HTML5</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-css3-plain colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">CSS</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-javascript-plain colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">JavaScript</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-php-plain colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">PHP</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-numpy-original colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">NumPy</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" class="w-8 h-8 mx-auto group-hover:scale-110 transition-transform" />
+          <p class="text-sm mt-2">Scikit-learn</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-tensorflow-original colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">TensorFlow</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-django-plain colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">Django</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="w-8 h-8 mx-auto group-hover:scale-110 transition-transform" />
+          <p class="text-sm mt-2">Flask</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <img src="https://matplotlib.org/_static/images/logo2.svg" alt="Matplotlib" class="w-8 h-8 mx-auto group-hover:scale-110 transition-transform">
+          <p class="text-sm mt-2">Matplotlib</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-pytorch-original colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">PyTorch</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-mysql-plain colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">MySQL</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform">
+          <i class="devicon-mongodb-plain colored text-4xl group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm mt-2">MongoDB</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-purple-500 pb-2">Education</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><strong>B.Tech in Computer Science and Technology (AI & ML)</strong>, Aravali College of Engineering and Management, 2021–2025</li>
+        <li><strong>12th</strong> – V.M. Sr. Sec. School, 2021</li>
+        <li><strong>10th</strong> – Karhana Po Fatehpur Sr. Sec. School, 2018</li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-pink-500 pb-2">Projects</h2>
+      <ul class="space-y-4">
+        <li>
+          <strong>AI-Based Plant Disease Detection</strong>: Deep learning project to detect and classify plant diseases using image processing and TensorFlow.
+          <a href="https://github.com/allendhruv/AI-Plant-Doctor" target="_blank" class="text-pink-500 hover:underline ml-2">[GitHub]</a>
+        </li>
+        <li>
+          <strong>Social Vibe Check</strong>: Developed a Sentiment Analysis based software using Python and Scikit-learn to analyze social media posts from Facebook and YouTube, providing meaningful insights.
+          <a href="https://github.com/allendhruv/Social-Vibe-Check" target="_blank" class="text-pink-500 hover:underline ml-2">[GitHub]</a>
+        </li>
+        <li>
+          <strong>AI Story Maker</strong>: Created a project utilizing Azure AI for image analysis to automatically generate engaging stories from user-uploaded content.
+          <a href="https://github.com/allendhruv/AI-Story-maker" target="_blank" class="text-pink-500 hover:underline ml-2">[GitHub]</a>
+        </li>
+        <li>
+          <strong>Urine Strip Analyzer</strong>: Python + Django web app to analyze urine strip colors from uploaded images and generate JSON results for medical diagnostics.
+          <!-- <a href="" target="_blank" class="text-pink-500 hover:underline ml-2">[GitHub]</a> -->
+        </li>
+        <li>
+          <strong>NAAC Portal</strong>: A full-stack website where teachers can securely save their important documents.
+          <!-- <a href="" target="_blank" class="text-pink-500 hover:underline ml-2">[GitHub]</a> -->
+        </li>
+        <li>
+          <strong>Song Recommendation System</strong>: Mood-based song recommendation system using Python, Keras, and TensorFlow with facial expression detection.
+          <a href="https://github.com/allendhruv/Song-recommendation" target="_blank" class="text-pink-500 hover:underline ml-2">[GitHub]</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-red-400 pb-2">Experiance</h2>
+      <ul class="space-y-4">
+        <li><strong>Data Analyst Trainee</strong> – Q Spider Noida, Mar 2025 - Present<br /></li>
+        <li><strong>Web Developer Intern</strong> – Hyretail Technologies Private Limited, Sep 2024 - Jan 2025<br /><span class="text-sm text-gray-300">Developed responsive landing pages, integrated Razorpay APIs, and improved performance by 30%.</span></li>
+        <li><strong>Graphic Designer</strong> – Grabin Sports Pvt Ltd, Aug 2023 - Dec 2023<br /><span class="text-sm text-gray-300">Worked on AI-based projects, including sentiment analysis and image classification.</span></li>
+      </ul>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-red-400 pb-2">Freelance Projects</h2>
+      <ul class="space-y-4">
+        <li><strong>E - Commerce Website</strong> – May 2025<br /><span class="text-sm text-gray-300">Engineered a full-stack e-commerce website, implementing user-friendly front-end designs and robust back-end systems for product management, transactions, and user accounts.</span></li>
+        <li><strong>Sire-Bagh</strong> – April 2025<br /><span class="text-sm text-gray-300">A front-end web application for restaurant information dissemination and reservation management.</span></li>
+        <li><strong>School Fees Reciept maker</strong> – May 2024<br /><span class="text-sm text-gray-300">Designed and implemented an MS Excel solution for automated school fee slip generation.</span></li>
+      </ul>
+    </section>
+
+    <!-- Certificates -->
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-yellow-500 pb-2">Certificates</h2>
+      <ul class="space-y-4">
+        <li><strong>Training Course ON Artificial Intelligence</strong> – Infosys Foundation </li>
+        <li><strong>Machine Learning Intern</strong> – Unified Mentor, Feb 2025 - June 2025<br /><span class="text-sm text-gray-300">Worked on plant disease detection model, optimized accuracy using data augmentation and CNN tuning.</span></li>
+      </ul>
+    </section>
+
+    <!-- Achievements -->
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-teal-400 pb-2">Achievements</h2>
+      <ul class="space-y-4">
+        <li><strong>Garbage Detector</strong> – Hackathon, Aravali College of Engineering and Management, 2024</li>
+        <li><strong>Top 20%</strong> – Amazon ML Hackathon, 2024</li>
+      </ul>
+    </section>
+
+    <!-- Strengths -->
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-indigo-400 pb-2">Strengths</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>Quick learner with a passion for problem solving</li>
+        <li>Excellent team collaboration and communication</li>
+        <li>Ability to work independently and under pressure</li>
+      </ul>
+    </section>
+
+    <!-- Languages Known -->
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-blue-400 pb-2">Languages Known</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>English – Fluent</li>
+        <li>Hindi – Native</li>
+      </ul>
+    </section>
+
+    <!-- Hobbies & Interests -->
+    <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
+      <h2 class="text-3xl font-semibold mb-6 border-b border-pink-300 pb-2">Hobbies & Interests</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>Exploring AI tools and trends</li>
+        <li>Playing Esports and Volleyball</li>
+        <li>Listening to podcasts on tech and innovation</li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    // Create stars function - fixed and optimized
+    function createStars() {
+      const container = document.getElementById('space-background');
+      if (!container) return; // Ensure container exists
+      
+      const starCount = 150;
+      const fragment = document.createDocumentFragment();
+      
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Size between 1-2px
+        const size = Math.random() + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Random position
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.top = `${Math.random() * 100}vh`;
+        
+        // Random animation delay
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        
+        // Occasionally make a slightly larger star
+        if (Math.random() > 0.9) {
+          star.style.width = `${size * 1.5}px`;
+          star.style.height = `${size * 1.5}px`;
+        }
+        
+        fragment.appendChild(star);
+      }
+      
+      container.appendChild(fragment);
+    }
+
+    // Theme toggle
+    const toggleBtn = document.getElementById('toggleTheme');
+    const themeIcon = document.getElementById('themeIcon');
+
+    // Set dark mode as default
+    document.documentElement.classList.add('dark');
+    toggleBtn.classList.add('bg-white', 'text-black');
+    themeIcon.classList.add('fa-moon');
+    
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      if (document.documentElement.classList.contains('dark')) {
+        toggleBtn.classList.remove('bg-black', 'text-white');
+        toggleBtn.classList.add('bg-white', 'text-black');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        document.querySelector('.content-container').style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      } else {
+        toggleBtn.classList.remove('bg-white', 'text-black');
+        toggleBtn.classList.add('bg-black', 'text-white');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        document.querySelector('.content-container').style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+      }
+    });
+
+    // Intersection Observer for fade-in effect
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.05,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Initialize stars after slight delay
+    window.addEventListener('DOMContentLoaded', () => {
+      createStars();
+    });
+  </script>
+</body>
+</html>
